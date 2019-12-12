@@ -4,16 +4,19 @@
 # [1, 2, 3, 4, 5] 
 
 
-#すぐに思いついた方法
+
 array = ["1", "2", "3", "4", "5"]
 result = []
 
-array.each do |n|
-  result.push(n.to_i)
-end
-
-puts result.to_s
-
-
 #リファクタリング
 print array.map(&:to_i)
+
+
+#すぐに思いついた方法
+# array.each do |n|
+#   result.push(n.to_i)
+# end
+
+# puts result.to_s
+
+

@@ -3,16 +3,18 @@
 # 期待される配列
 # [1, 3, 5, 7, 9]
 
-#すぐに思いついた方法
+
 array = [1, 2, 3, 4, 5]
 result = []
 
-array.each.with_index(0) do |fac, i|
-  n = fac + i
-  result.push(n)
-end
-
-puts result.to_s
-
 # リファクタリング
 print array.each.with_index(0).map {|fac, i| fac + i }
+
+# はじめに思いついた方法
+# array.each.with_index(0) do |fac, i|
+#   n = fac + i
+#   result.push(n)
+# end
+
+# puts result.to_s
+

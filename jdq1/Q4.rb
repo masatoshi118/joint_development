@@ -5,7 +5,7 @@
 array1 = ["dog", "cat", "fish"]
 array2 = ["bird", "bat", "tiger"]
 
-# 思いついた方法
+# "+"を使う方法
 print (array1 + array2)
 
 # pushを使う方法

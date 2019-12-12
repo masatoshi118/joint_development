@@ -16,11 +16,11 @@ def arrayempty(array)
   array.empty? ? true : false
 end
 
-
-def ar_empty(array)
-  if array.empty?
-    puts "true"
-  else
-    puts "false"
-  end
-end
+# はじめに思いついた方法
+# def ar_empty(array)
+#   if array.empty?
+#     puts "true"
+#   else
+#     puts "false"
+#   end
+# end

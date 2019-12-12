@@ -16,19 +16,19 @@ def arraytest_r(test)
 end
 
 # kind_of?メソッドを使ったパターン
-def array_test(test) 
-  if test.kind_of?(Array)
-    puts "true"
-  else
-    puts "false"
-  end
-end
+# def array_test(test) 
+#   if test.kind_of?(Array)
+#     puts "true"
+#   else
+#     puts "false"
+#   end
+# end
 
 # classメソッドを使ったパターン
-def array_test1(test) 
-  if test.class == Array
-    puts "true"
-  else
-    puts "false"
-  end
-end
+# def array_test1(test) 
+#   if test.class == Array
+#     puts "true"
+#   else
+#     puts "false"
+#   end
+# end
