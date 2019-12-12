@@ -6,4 +6,8 @@
 
 array = ["田中", "佐藤", "佐々木", "高橋"]
 
-print array.push("斎藤")
+# <<を用いた方法
+p array << "斎藤"
+
+# pushを用いた方法
+# print array.push("斎藤")

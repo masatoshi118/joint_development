@@ -6,10 +6,10 @@ array1 = ["dog", "cat", "fish"]
 array2 = ["bird", "bat", "tiger"]
 
 # "+"を使う方法
-print (array1 + array2)
+p array1 + array2
 
 # pushを使う方法
-# result = array1.push(array2)
+# p array1.push(array2)
 
 # print result.flatten
 # concatを使う方法

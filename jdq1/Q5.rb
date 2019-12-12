@@ -3,4 +3,9 @@
 
 array = [1, 5, 8, 10, 2, 3, 2, 3, 3, 1, 4, 5, 9]
 
-puts array.select{|i| i == 3}.count
+# リファクタリング
+# count()メソッドは配列の中の引数で指定した要素の数を返す
+p array.count(3)
+
+# 最初に思いついた方法
+# puts array.select{|i| i == 3}.count

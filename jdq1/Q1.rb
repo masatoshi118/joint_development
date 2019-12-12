@@ -7,6 +7,9 @@
 array = [1, 2, 3, 4, 5]
 result = []
 
+# 簡単な方法
+p array.map {|n| 2 * n - 1}
+
 # リファクタリング
 print array.each.with_index(0).map {|fac, i| fac + i }
 
