@@ -1,18 +1,11 @@
 # Q7. 配列であればtrue、配列でなければfalseを返すコードを書いてください
 
-# 例
-# []
-# -> true
+def q7
+  test1 = []
+  test2 = {}
 
-# {}
-# -> false
-
-test1 = []
-test2 = {}
-
-#リファクタリング
-def arraytest_r(test)
-  test.kind_of?(Array) ? true : false
+  p test1.kind_of?(Array)
+  p test2.kind_of?(Array)
 end
 
 # kind_of?メソッドを使ったパターン

@@ -3,16 +3,13 @@
 # 期待する配列
 # [1, 2, 3, 4, 5] 
 
-
-
-array = ["1", "2", "3", "4", "5"]
-result = []
-
-#リファクタリング
-p array.map(&:to_i)
-
+def q3
+  array = ["1", "2", "3", "4", "5"]
+  p array.map(&:to_i)
+end
 
 #すぐに思いついた方法
+# resuls = []
 # array.each do |n|
 #   result.push(n.to_i)
 # end

@@ -2,15 +2,16 @@
 # ["dog", "cat", "fish"]
 # ["bird", "bat", "tiger"]
 
-array1 = ["dog", "cat", "fish"]
-array2 = ["bird", "bat", "tiger"]
+def q4
+  array1 = ["dog", "cat", "fish"]
+  array2 = ["bird", "bat", "tiger"]
 
-# "+"を使う方法
-p array1 + array2
+  p array1 + array2
+end
 
 # pushを使う方法
 # p array1.push(array2)
-
 # print result.flatten
+
 # concatを使う方法
 # print array1.concat(array2)

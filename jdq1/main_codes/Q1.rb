@@ -3,15 +3,13 @@
 # 期待される配列
 # [1, 3, 5, 7, 9]
 
-
-array = [1, 2, 3, 4, 5]
-result = []
-
-# 簡単な方法
-p array.map {|n| 2 * n - 1}
+def q1
+  array = [1, 2, 3, 4, 5]
+  p array.map {|n| 2 * n - 1}
+end
 
 # リファクタリング
-print array.each.with_index(0).map {|fac, i| fac + i }
+# print array.each.with_index(0).map {|fac, i| fac + i }
 
 # はじめに思いついた方法
 # array.each.with_index(0) do |fac, i|

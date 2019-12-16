@@ -4,11 +4,13 @@
 # p numbers.map {|item| item.to_i }
 # -> [6, 5, 3, 7, 1]
 
-numbers = ["6", "5", "3", "7", "1"]
-result = []
+def q8
+  numbers = ["6", "5", "3", "7", "1"]
+  result = []
 
-numbers.each do |n|
-  result.push(n.to_i)
+  numbers.each do |n|
+    result << n.to_i
+  end
+
+  p result
 end
-
-p result
