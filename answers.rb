@@ -106,7 +106,7 @@ module Answers
   end
   #-------------------------------------------------
 
-  #--------------------レビュー待ち--------------------
+  #-----------------------修正-----------------------
   # Q9. 以下の配列を用いて、期待通りの出力結果になるようにコードを書いてください
   # ["田中", "佐藤", "佐々木", "高橋"]
   # 期待結果
@@ -118,13 +118,13 @@ module Answers
   def q9
     names = ["田中", "佐藤", "佐々木", "高橋"]
 
-    names.each do |name|
-      puts "会員No.#{names.index(name)+1} #{name}さん"
+    names.each.with_index(1) do |name, i|
+      puts "会員No.#{i} #{name}さん"
     end
   end
   #-------------------------------------------------
 
-  #--------------------レビュー待ち--------------------
+  #-----------------------完了-----------------------
   # Q10.  以下の配列の最後に山下を追加してください
   # ["田中", "佐藤", "佐々木", "高橋"]
 
@@ -135,7 +135,7 @@ module Answers
   end
   #-------------------------------------------------
 
-  #--------------------レビュー待ち--------------------
+  #-----------------------完了-----------------------
   # Q11 以下の配列から重複する部分だけを抽出した新しい配列を作成してください
   # favorite_sport = ["フットサル", "バスケット"]
   # selected_sport = ["野球", "ボルダリング", "サッカー", "フットサル"]
@@ -148,7 +148,7 @@ module Answers
   end
   #-------------------------------------------------
 
-  #--------------------レビュー待ち--------------------
+  #-----------------------完了-----------------------
   # Q12 以下の配列を用いた繰り返し処理において、「うに」が含まれていれば「好物です」と表示し、そうでなければ「まぁまぁ好きです」と表示するようにコードを書いてください
   # ["いか", "たこ", "うに", "しゃけ", "うにぎり", "うに軍艦", "うに丼"]
 
@@ -165,7 +165,7 @@ module Answers
   end
   #-------------------------------------------------
 
-  #--------------------レビュー待ち--------------------
+  #-----------------------完了-----------------------
   # Q13. 以下の配列から奇数だけを選んだ新しい配列を作成してください
   # [1, 2, 3, 4, 5]
 
@@ -175,7 +175,7 @@ module Answers
   end
   #-------------------------------------------------
 
-  #--------------------レビュー待ち--------------------
+  #-----------------------完了-----------------------
   # Q14. 以下の配列からnilの要素を削除してください
   # ["サッカー", "フットサル", nil, "野球", "バスケ", nil, "バレー"]
 
@@ -185,7 +185,7 @@ module Answers
   end
   #-------------------------------------------------
 
-  #--------------------レビュー待ち--------------------
+  #-----------------------完了-----------------------
   # Q15. 以下の配列からadminの数を数えてください
   # ["admin", "user", "user", "admin", "admin"]
 
@@ -195,7 +195,7 @@ module Answers
   end
   #-------------------------------------------------
 
-  #--------------------レビュー待ち--------------------
+  #-----------------------修正-----------------------
   # Q16. 以下の配列をもとに期待する出力結果になるようにコードを書いてください
   # ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
 
@@ -215,13 +215,13 @@ module Answers
 
     result = sports.flatten.uniq
 
-    result.each do |s|
-      puts "No#{result.index(s)+1} #{s}"
+    result.each.with_index(1) do |s, i|
+      puts "No#{i} #{s}"
     end
   end
   #-------------------------------------------------
 
-  #--------------------レビュー待ち--------------------
+  #-----------------------完了-----------------------
   # Q17. 以下のハッシュから name の値を取り出してください
   # {name: "satou", age: 33}
 
@@ -231,7 +231,7 @@ module Answers
   end
   #-------------------------------------------------
   
-  #--------------------レビュー待ち--------------------
+  #-----------------------完了-----------------------
   # Q18. 以下のハッシュから name の値を取り出して下さい
 
   # {user: {name: "satou", age: 33}}
@@ -242,7 +242,7 @@ module Answers
   end
   #-------------------------------------------------
 
-  #--------------------レビュー待ち--------------------
+  #-----------------------完了-----------------------
   # Q19. 以下の既存で存在する user_data に対して、 update_data の内容を反映させ user_data の内容を書き換えて下さい
 
   # user_data = {name: "神里", age: 31, address: "埼玉"}
@@ -256,9 +256,135 @@ module Answers
   end
   #-------------------------------------------------
 
-  #--------------------レビュー待ち--------------------
-  
+  #-------------------レビュー待ち--------------------
+  # Q20. 以下の全てのハッシュの name と age の値を取り出し、「私の名前は〜です年齢は〜歳です」と表示してください
+
+  # {name: "satou", age: 22}
+  # {name: "yamada", age: 12}s
+  # {name: "takahashi", age: 32}
+  # {name: "nakamura", age: 41}
+
+  def q20
+    list = [
+      {name: "satou", age: 22},
+      {name: "yamada", age: 12},
+      {name: "takahashi", age: 32},
+      {name: "nakamura", age: 41}
+      ]
+
+    list.each {|user| puts "「私の名前は#{user[:name]}です年齢は#{user[:age]}歳です」"}
+  end
   #-------------------------------------------------
+
+  #-------------------レビュー待ち---------------------
+  # Q21. 以下の配列から全てのキーを取り出してターミナルに出力してください
+
+  # {name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com"}
+
+  def q21
+    has = {name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com"}
+
+    has.keys.each {|key| puts key}
+  end
+  #-------------------------------------------------
+
+  #-------------------レビュー待ち---------------------
+  # Q22. ハッシュを格納した以下の配列を使用し、期待した結果になるようにコードを書いてください
+
+  # users = [
+  # {name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com"},
+  # {},
+  # {name: "yamada", age: 22, address: "tokyo", hobby: "soccer", email: "hoge@fuga.com"},
+  # {},
+  # {name: "suzuki", age: 44, address: "yamaguchi", hobby: "baseball", email: "hoge@fuga.com"}
+  # ]
+  # 期待結果
+  # ハッシュにデータがある場合：No〜 名前〜、年齢〜、趣味〜、メール〜
+  # ハッシュがからの場合：データなし
+
+  def q22
+    users = [
+      {name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com"},
+      {},
+      {name: "yamada", age: 22, address: "tokyo", hobby: "soccer", email: "hoge@fuga.com"},
+      {},
+      {name: "suzuki", age: 44, address: "yamaguchi", hobby: "baseball", email: "hoge@fuga.com"}
+      ]
+
+      users.each.with_index(1) do |user, i|
+        unless user.empty?
+          puts "No#{i} 名前 #{user[:name]}、年齢 #{user[:age]}、趣味 #{user[:hobby]}、メール #{user[:email]}"
+        else
+          puts "データ無し"
+        end
+      end
+  end
+  #--------------------------------------------------
+
+  #-------------------レビュー待ち---------------------
+  # Q23. 以下のハッシュをキー、バリュー含め全て配列に変換してください
+
+  # {name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com"}
+  # 変換後の配列
+  # [:name, "satou", :age, 33, :address, "saitama", :hobby, "soccer", :email, "hoge@fuga.com"]
+
+  def q23
+    has = {name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com"}
+
+    p has.to_a.flatten
+  end
+  #--------------------------------------------------
+
+  #-------------------レビュー待ち---------------------
+  # Q24. 以下のハッシュにおいて age というキーが含まれている場合は OK 、含まれていない場合は NG が表示されるようにしてください
+
+  # { name: "saitou", hobby: "soccer", age: 33, role: "admin" }
+  # { name: "yamada", hobby: "baseball", role: "normal" }
+
+  def q24
+    users = [
+      { name: "saitou", hobby: "soccer", age: 33, role: "admin" },
+      { name: "yamada", hobby: "baseball", role: "normal" } 
+    ]
+
+    users.each do |user|
+      puts (user.has_key?(:age) ? "OK" : "NG")
+    end
+  end
+  #--------------------------------------------------
+
+  #-------------------レビュー待ち---------------------
+  # Q25.  配列 keys の各要素を、ハッシュ user がキーとして保持するかどうかを判定するコードを書いてください
+
+  # keys = [:age, :name, :hobby, :address]
+  # user = { name: "saitou", hobby: "soccer", age: 33, role: "admin" }
+  # 例（意図が伝われば文章は自由に変えていただいて大丈夫です）
+  # userにはageというキーがあります
+  # userにはaddressというキーがありません
+
+  def q25
+    keys = [:age, :name, :hobby, :address]
+    user = { name: "saitou", hobby: "soccer", age: 33, role: "admin" }
+
+    keys.each do |key|
+      puts (user.has_key?(key) ? "userにはキー#{key}があります" : "userにはキー#{key}がありません")
+    end
+  end
+  #--------------------------------------------------
+
+  #-------------------レビュー待ち---------------------
+  # Q26. 以下の２つのハッシュを合体させた新しいハッシュを作成してください
+
+  # {C: "printf", COBOL: "DISPLAY", Go: "fmt.Print", Java: "System.out.println"}
+  # {JavaScript: "console.log", R: "print", Ruby: "puts"}
+
+  def q26
+    h1 = {C: "printf", COBOL: "DISPLAY", Go: "fmt.Print", Java: "System.out.println"}
+    h2 = {JavaScript: "console.log", R: "print", Ruby: "puts"}
+
+    p h1.merge(h2)
+  end
+  #--------------------------------------------------
 
 end
 

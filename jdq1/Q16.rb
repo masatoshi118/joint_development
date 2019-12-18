@@ -18,7 +18,7 @@ def q16
 
   result = sports.flatten.uniq
    
-  result.each do |s|
-    puts "No#{result.index(s)+1} #{s}"
+  result.each.with_index(1) do |s, i|
+    puts "No#{i} #{s}"
   end
 end

@@ -10,8 +10,8 @@
 def q9
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
-  names.each do |name|
-    puts "会員No.#{names.index(name)+1} #{name}さん"
+  names.each.with_index(1) do |name|
+    puts "会員No.#{i} #{name}さん"
   end
 end
 
