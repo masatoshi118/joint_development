@@ -4,5 +4,5 @@
 def q13
   numbers = [1, 2, 3, 4, 5]
 
-  p numbers.select{|n| n.odd?}
+  p numbers.select(&:odd?)
 end
