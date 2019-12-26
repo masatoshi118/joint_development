@@ -5,5 +5,5 @@
 def q21
   has = {name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com"}
 
-  has.keys.each {|key| puts key}
+  puts has.keys
 end

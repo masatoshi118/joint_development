@@ -21,10 +21,10 @@ def q22
     ]
 
     users.each.with_index(1) do |user, i|
-      unless user.empty?
-        puts "No#{i} 名前 #{user[:name]}、年齢 #{user[:age]}、趣味 #{user[:hobby]}、メール #{user[:email]}"
-      else
+      if user.empty?
         puts "データ無し"
+      else
+        puts "No#{i} 名前 #{user[:name]}、年齢 #{user[:age]}、趣味 #{user[:hobby]}、メール #{user[:email]}"
       end
     end
 end
