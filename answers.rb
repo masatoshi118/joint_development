@@ -386,7 +386,7 @@ module Answers
   end
   #--------------------------------------------------
 
-  #--------------------レビュー待ち---------------------
+  #----------------------完了-------------------------
   # Q27. 名前、年齢、性別、管理者権限の情報を持ったユーザークラスを定義して
   #      インスタンスを作成してください管理者権限の有無はtrueかfalseで表してください
 
@@ -405,12 +405,14 @@ module Answers
     end
 
     def info
+      admin = @admin ? "有り" : "無し"
+
       puts <<~INFO
       名前：#{@name}
       年齢：#{@age}
       性別：#{@gender}
+      管理者権限：#{admin}
       INFO
-      puts (@admin? "管理者権限：有り" : "管理者権限：無し")
     end
 
   end
@@ -425,12 +427,12 @@ module Answers
   end
   #--------------------------------------------------
 
-  #--------------------レビュー待ち---------------------
+  #----------------------完了-------------------------
   # Q29.次のようなコードを書いて、目標の出力になるようなUserクラスを定義してください
   # 今回は attr_accessor attr_reader attr_writer は使用しないでください
   
   class User_q29
-    def initialize(name: name)
+    def initialize(name:)
       @name = name
     end
   
@@ -451,7 +453,7 @@ module Answers
   end
   #--------------------------------------------------
 
-  #--------------------レビュー待ち---------------------
+  #----------------------完了-------------------------
   # Q30. 以下のようなコードを書いて、期待した出力になるようなUserクラスを定義してください
 
   class User_q30
@@ -479,13 +481,13 @@ module Answers
   end
   #--------------------------------------------------
 
-  #--------------------レビュー待ち---------------------
+  #----------------------完了-------------------------
   # Q31. 以下のようなコードを書くとエラーが出たので期待する出力結果となるように修正してください
 
   class Item
     attr_reader :name
 
-    def initialize(name: name)
+    def initialize(name:)
       @name = name
     end
   end
@@ -496,7 +498,7 @@ module Answers
   end
   #--------------------------------------------------
 
-  #--------------------レビュー待ち---------------------
+  #----------------------完了-------------------------
   # Q32.次の仕様を満たすコードを書いてください
   # * 名前、年齢の情報を持った「ユーザークラス」を定義してください
   # * 名前、入場料金の情報を持った「動物園クラス」を定義してください
@@ -507,7 +509,7 @@ module Answers
   class User_q32
     attr_reader :name, :age
 
-    def initialize(name: name, age: age)
+    def initialize(name:, age:)
       @name = name
       @age = age
     end
@@ -548,6 +550,120 @@ module Answers
 
     zoo.check_entry_fee(user1.age)
     zoo.check_entry_fee(user2.age)
+  end
+  #--------------------------------------------------
+
+  #-------------------レビュー待ち---------------------
+  # Q33.  次の指定のキー name, age, address, tell が、Hash値のキーとして過不足無く含まれているかを判定するコードを書いてください
+
+  def q33
+    user_1 = {name: "あじー", age: 32, address: "札幌", tell: "090-000-000"}
+    user_2 = {name: "あじー", age: 32, address: "札幌"}
+    user_3 = {name: "あじー", age: 32, address: "札幌", tell: "090-000-000", gender: "male"}
+    
+    def key_check(user)
+      # 順番を入れ替えて記述
+      valid_keys = [:name, :tell, :address, :age] 
+      user_keys = user.keys
+      # sortメソッドを使って並び替えてから比較
+      p valid_keys.sort == user_keys.sort 
+    end
+
+    key_check(user_1)
+    key_check(user_2)
+    key_check(user_3)
+  end
+  #--------------------------------------------------
+
+  #-------------------レビュー待ち---------------------
+  #Q34.次のコードが成り立つようにコードを書き加えてください
+
+  # programming_language = ["ruby", "php", "python", "javascript"]
+
+  # p programming_language
+  # p upper_case_programming_language
+
+  # 出力結果
+
+  # ["Ruby", "Php", "Python", "Javascript"]
+  # ["RUBY", "PHP", "PYTHON", "JAVASCRIPT"]
+
+
+  def q34
+    programming_language = ["ruby", "php", "python", "javascript"]
+
+    upper_case_programming_language = programming_language.map(&:upcase)
+
+    p programming_language
+    p upper_case_programming_language
+  end
+
+  #--------------------------------------------------
+
+  #-------------------レビュー待ち---------------------
+
+  # Q35 2つのデータベースからユーザーネーム・学習項目・合計学習時間のデータを取得したら以下のようになりました
+
+  # [["田中", "JavaScript"], 30]
+  # 上記の配列を以下のようなハッシュに変換してください
+  # {"user_name" => "田中", "learning_contents" => "JavaScript", "learning_time" => 30}
+
+  def q35
+    array = [["田中", "JavaScript"], 30]
+    keyAry = ["user_name", "learning_contents", "learning_time"]
+
+    keyValue = array.flatten
+
+    ary = [keyAry, keyValue].transpose
+    h = Hash[*ary.flatten]
+
+    p h
+  end
+  #--------------------------------------------------
+
+  #-------------------レビュー待ち---------------------
+  # Q36 2つのデータベースからユーザーネーム・学習項目・合計学習時間のデータを取得したら以下のようになりました
+
+  # {["田中", "JavaScript"]=>30}
+  # 上記のハッシュを以下のようなハッシュに変換してください
+  # {"user_name" => "田中", "learning_contents" => "JavaScript", "learning_time" => 30}
+
+  def q36
+    hash = {["田中", "JavaScript"]=>30}
+    keyAry = ["user_name", "learning_contents", "learning_time"]
+
+    keyValue = hash.to_a.flatten
+
+    ary = [keyAry, keyValue].transpose
+    h = Hash[*ary.flatten]
+
+    p h
+  end
+  #--------------------------------------------------
+
+  #-------------------レビュー待ち---------------------
+  # Q37 2つのデータベースからユーザーネーム・学習項目・合計学習時間のデータを取得したら以下のようになりました
+
+  # {["田中", "HTML"]=>30, ["斎藤", "JavaScript"]=>50}
+  # 上記のハッシュを以下のようなハッシュの配列に変換してください
+  # [{"user_name" => "田中", "learning_contents" => "HTML", "learning_time" => 30}, {"user_name" => "斎藤", "learning_contents" => "JavaScript", "learning_time" => 50}]
+
+  def q37
+    hash = {["田中", "HTML"]=>30, ["斎藤", "JavaScript"]=>50}
+    keyAry = ["user_name", "learning_contents", "learning_time"]
+    result_h = []
+
+    arrays = hash.to_a
+
+    arrays.each do |array|
+      keyValue = array.flatten
+    
+      ary = [keyAry, keyValue].transpose
+      h = Hash[*ary.flatten]
+      result_h << h
+    end
+
+    p result_h
   end
   #--------------------------------------------------
 

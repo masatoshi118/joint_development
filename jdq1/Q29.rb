@@ -13,7 +13,7 @@
 # tanakin
 
 class User
-  def initialize(name: name)
+  def initialize(name:)
     @name = name
   end
 
