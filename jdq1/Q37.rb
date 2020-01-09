@@ -7,17 +7,11 @@
 def q37
   hash = {["田中", "HTML"]=>30, ["斎藤", "JavaScript"]=>50}
   keyAry = ["user_name", "learning_contents", "learning_time"]
-  result_h = []
-  
+
   arrays = hash.to_a
   
-  arrays.each do |array|
+  arrays.map do |array|
     keyValue = array.flatten
-  
-    ary = [keyAry, keyValue].transpose
-    h = Hash[*ary.flatten]
-    result_h << h
+    p [keyAry, keyValue].transpose.to_h
   end
-  
-  p result_h
 end

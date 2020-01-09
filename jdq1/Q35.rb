@@ -11,7 +11,5 @@ def q35
   keyValue = array.flatten
   
   ary = [keyAry, keyValue].transpose
-  h = Hash[*ary.flatten]
-  
-  p h
+  p ary.to_h
 end

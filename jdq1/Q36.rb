@@ -7,11 +7,8 @@
 def q36
   hash = {["田中", "JavaScript"]=>30}
   keyAry = ["user_name", "learning_contents", "learning_time"]
-  
+
   keyValue = hash.to_a.flatten
-  
-  ary = [keyAry, keyValue].transpose
-  h = Hash[*ary.flatten]
-  
-  p h
+
+  p [keyAry, keyValue].transpose.to_h
 end
